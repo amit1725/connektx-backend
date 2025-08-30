@@ -25,6 +25,18 @@ public class PublicController {
         this.sitemapService = sitemapService;
     }
 
+    @GetMapping("/categories/{categorySlug}/blogs")
+    public ResponseEntity<List<Blog>> getBlogsByCategory(@PathVariable String categorySlug) {
+        Optional<Category> category = categoryRepo.findBySlug(categorySlug);
+        if (category.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+    
+        List<Blog> blogs = blogRepo.findByCategoryAndPublishedTrue(category.get());
+        return ResponseEntity.ok(blogs);
+    }
+
+
     @GetMapping("/blogs")
     public List<Blog> listBlogs() {
         return blogRepo.findAll(); // add pagination as needed
@@ -69,3 +81,4 @@ public class PublicController {
         return ResponseEntity.ok(sitemapService.getSitemap());
     }
 }
+
