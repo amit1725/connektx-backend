@@ -31,11 +31,11 @@ public class PublicController {
         if (category.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-    
-        List<Blog> blogs = blogRepo.findByCategoryAndPublishedTrue(category.get());
+
+        // use categoryId instead of Category object
+        List<Blog> blogs = blogRepo.findByCategoryIdAndPublishedTrue(category.get().getId());
         return ResponseEntity.ok(blogs);
     }
-
 
     @GetMapping("/blogs")
     public List<Blog> listBlogs() {
@@ -81,4 +81,5 @@ public class PublicController {
         return ResponseEntity.ok(sitemapService.getSitemap());
     }
 }
+
 
