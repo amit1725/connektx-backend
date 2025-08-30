@@ -1,7 +1,6 @@
 package com.example.blog.repository;
 
 import com.example.blog.model.Blog;
-import com.example.blog.model.Category;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 import java.util.List;
@@ -11,6 +10,7 @@ public interface BlogRepository extends MongoRepository<Blog, String> {
     boolean existsBySlug(String slug);
     List<Blog> findAllByPublishedTrue();
     List<Blog> findAllByFeaturedTrue();
-    List<Blog> findByCategoryAndPublishedTrue(Category c);
+    List<Blog> findByCategoryIdAndPublishedTrue(String categoryId);
 }
+
 
