@@ -10,6 +10,7 @@ public class Category {
     private String name;
     private String slug;
     private String description;
+    private String imgUrl;
 
     public Category() {}
 
@@ -23,6 +24,10 @@ public class Category {
     public String getSlug() { return slug; }
     public void setSlug(String slug) { this.slug = slug; }
 
+    public String getImgUrl() { return imgUrl; }
+    public void setImgUrl(String imgUrl){ this.imgUrl=imgUrl; }
+
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 }
+
