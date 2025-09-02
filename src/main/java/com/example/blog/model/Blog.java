@@ -17,6 +17,7 @@ public class Blog {
     private boolean published = false;
     private Long count=(long) 0;
     private String createdBy;
+	private String thumbnail;
     private Date createdAt = new Date();
     private Date updatedAt = new Date();
 
@@ -32,6 +33,9 @@ public class Blog {
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
+
+	public String getThumbnail() { return thumbnail; }
+    public void setThumbnail(String thumbnail) { this.thumbnail = thumbnail; }
 
     public String getSlug() { return slug; }
     public void setSlug(String slug) { this.slug = slug; }
@@ -82,3 +86,4 @@ public class Blog {
     public Date getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
 }
+
