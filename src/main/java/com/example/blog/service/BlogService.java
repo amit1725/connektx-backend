@@ -44,6 +44,7 @@ public class BlogService {
         if (payload.getContent() != null) b.setContent(payload.getContent());
         if (payload.getExcerpt() != null) b.setExcerpt(payload.getExcerpt());
         if (payload.getCategoryId() != null) b.setCategoryId(payload.getCategoryId());
+        if (payload.getThumbnail() !=null ) b.setThumbnail(payload.getThumbnail());
         b.setPublished(payload.isPublished());
         b.setCreatedBy(payload.getCreatedBy());
 
@@ -77,3 +78,4 @@ public class BlogService {
         return candidate;
     }
 }
+
