@@ -31,8 +31,10 @@ public class CategoryService {
         if (payload.getName() != null) c.setName(payload.getName());
         if (payload.getDescription() != null) c.setDescription(payload.getDescription());
         if (payload.getSlug() != null) c.setSlug(SlugUtil.toSlug(payload.getSlug()));
+        if (payload.getImgUrl() !=null ) c.setImgUrl(payload.getImgUrl());
         return repo.save(c);
     }
 
     public void delete(String id) { repo.deleteById(id); }
 }
+
