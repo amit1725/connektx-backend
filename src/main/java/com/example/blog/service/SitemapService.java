@@ -39,7 +39,7 @@ public class SitemapService {
         String base = siteUrl.endsWith("/") ? siteUrl.substring(0, siteUrl.length() - 1) : siteUrl;
         for (Blog b : blogs) {
             sb.append("  <url>\n");
-            sb.append("    <loc>").append(base).append("/blog/").append(b.getSlug()).append("</loc>\n");
+            sb.append("    <loc>").append(base).append("/blogs/").append(b.getSlug()).append("</loc>\n");
             sb.append("  </url>\n");
         }
         sb.append("</urlset>");
@@ -63,3 +63,4 @@ public class SitemapService {
         return cachedSitemap;
     }
 }
+
