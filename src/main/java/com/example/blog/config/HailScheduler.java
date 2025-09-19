@@ -17,7 +17,7 @@ public class HailScheduler {
     @Scheduled(fixedRate = 840000)
     public void callServer() {
         try {
-            String response = restTemplate.getForObject(serverUrl, String.class);
+            String response = restTemplate.getForObject(serverUrl + "/hail", String.class);
             System.out.println("Hail response: " + response);
         } catch (Exception e) {
             System.err.println("Failed to hail server: " + e.getMessage());
